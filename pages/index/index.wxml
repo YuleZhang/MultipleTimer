@@ -1,0 +1,14 @@
+
+<view class="container">
+  <view class='circle'>
+    <text>{{time}}</text>
+  </view>
+</view>
+
+<view class="layout_horizontal">
+  <button class='button' bindtap='startSetInter'>开始</button>
+  <button class='button' bindtap='endSetInter'>暂停</button>
+</view>
+<view class='container'>
+<button class='button' bindtap='handleGra'>提交成绩</button>
+</view>
