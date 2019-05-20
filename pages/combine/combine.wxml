@@ -1,5 +1,0 @@
-<view>
-    <canvas canvasId="myCanvas" class="myCanvas" style="height:300px;;width:100%;"></canvas>
-    <ad unitId="adunit-d9d4362d159c480f"></ad>
-    <button bind:tap="savePic">保存至相册</button>
-</view>

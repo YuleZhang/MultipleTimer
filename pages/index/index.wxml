@@ -1,14 +1,44 @@
-
-<view class="container">
-  <view class='circle'>
-    <text>{{time}}</text>
-  </view>
-</view>
-
-<view class="layout_horizontal">
-  <button class='button' bindtap='startSetInter'>开始</button>
-  <button class='button' bindtap='endSetInter'>暂停</button>
-</view>
 <view class='container'>
-<button class='button' bindtap='handleGra'>提交成绩</button>
+  <view class="container">
+    <view class='circle'>
+      <text>{{time}}</text>
+    </view>
+  </view>
+  <view class="layout_horizontal">
+    <button class='button' bindtap='startOrStopTimer'>{{isStart?'停止计时':'开始计时'}}</button>
+    <button class='button' bindtap='submitTime' disabled="{{!isSubmitTime}}">上传成绩</button>
+  </view>
+  <button class='button' bindtap='showRank'>查看排行</button>
+  <input placeholder="请输入名字" maxlength="11" type="text" bindinput="changeUserName"/>
+  <input placeholder="请输入组号" maxlength="3" type="number" bindinput="changeUserGroup"/>
+  <button class='warn' hidden='{{!isAdmin}}' bindtap='clearAllTime'>清空在线计时数据</button>
 </view>
+
+<!--index.wxml-->
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showRankType!=0}}">
+    <text class='txt_test'>{{showRankType==1?'选择组号':'排行榜'}}</text>
+    <view bindtap="back" class="btnBack" >
+      <image
+        style='margin-top:10px;margin-left:10px;width:50%; height: 50%;background-coloc: #eeeeee;'
+        mode="scaleToFill"
+        src="../../image/back.png"
+      ></image>
+    </view>
+</view>
+
+<!-- 弹出层 -->
+<view class="modalDlg" style="background-color: rgb(225, 218, 211)" wx:if="{{showRankType!=0}}">
+    <view class="rank_group" wx:if="{{showRankType==1}}"> 
+      <button id="{{item}}" wx:for="{{groupArray}}" wx:key="item" class="itemGroup" bindtap='showDialogRank'>{{item}}</button>
+    </view>
+    <view class="rank_item" wx:for="{{rankArray}}" wx:key="item" wx:if="{{showRankType==2}}"> 
+      <text class="itemsRank">{{item.rank}}</text>
+      <text class='itemsName' >{{item.name}}</text>
+      <text class='itemGrade'>{{item.grade}}</text>
+    </view>
+</view>
+
+<modal title="请输入密码" wx:if="{{isLogin}}" confirm-text="确定" bindconfirm="login" cancel-text="不能取消~">
+  <input placeholder="在此输入密码" type="password" bindinput="changeLoginPassword" />
+</modal>
