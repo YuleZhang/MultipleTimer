@@ -1,0 +1,196 @@
+.btnZoom {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+input {
+  margin-top: 30px;
+  text-align: center;
+}
+
+button {
+    margin: 20px 20px 0px 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.warn {
+  color: red
+}
+
+.bgPic,.emptyBg {
+    height: 300px;
+    width: 300px;
+}
+
+.emptyBg {
+    border: 2px solid;
+}
+
+.layout_horizontal{
+  /* margin: 20px 30px 0px 20px; */
+  /* height: 100px; */
+  /* width: 300px; */
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.circle{
+    width: 200px;
+    height: 200px;
+    border: 2rpx solid #111010;
+    border-radius: 500px;
+    border-color: black;
+    /* box-shadow: 4px 1px 1px #cccccc; */
+    /* box-shadow: 4px 4px 4px 4px #cccccc; */
+    text-align: center;
+    line-height: 450rpx;
+    /* text-justify: center; */
+}
+.iptSty
+{
+  margin: 20px,20px,20px,20px;
+  width: 100%;
+}
+
+.bright789_view_hide{
+
+    display: none;
+
+}
+
+.bright789_view_show{
+    display: block;
+}
+
+
+/**index.wxss**/
+/* 外面的按钮 */
+/* .btn{
+  width: 80px;
+  height: 35px;
+  background: #44b549;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  margin:20px auto;
+  border-radius: 100px; 
+} */
+
+/* 遮罩层 */
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.5;
+}
+ 
+/* 弹出层 */
+.modalDlg{
+    width: 80%;
+    height: 70%;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    background-color: rgb(49, 48, 48);
+    border-radius:5px;
+}
+
+/* 弹出层里面的图片 */
+.modalDlg image{
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
+}
+
+/* 弹出层里面的按钮 */
+.back{
+  width: 80px;
+  height: 35px;
+  background: #44b549;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  margin:20px auto;
+  border-radius: 100px;
+}
+
+/* 弹出层里面的文字 */
+/* .text{
+  text-align: justify;
+  font-size: 14px;
+  color: #666;
+  width: 180px;
+  margin-top: 10px;
+} */
+
+/* 弹窗水平布局 */
+.rank_item{
+  width: 100%;
+  display: flex;
+  flex-direction: row; 
+  margin-top: 10px;
+}
+
+.rank_group{
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+
+.itemGroup {
+  background-color: rgb(154, 172, 160); 
+  width: 50px;
+  height: 50px
+}
+
+.itemsRank { 
+ background-color: rgb(154, 172, 160); 
+ width:20%;
+ text-align: center;
+ margin-left: 5%; 
+}
+.itemsName{
+  display: flex;
+  justify-content: center;
+  width:50%;
+}
+.itemGrade{
+  justify-content: center;
+  margin-right: 5%;
+  width:30%;
+}
+
+/*遮罩层文字布局测试*/
+.txt_test{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 45rpx;
+  color: #ffffff;
+}
+/*返回主界面button设计*/
+.btnBack{
+  margin-top: 120%;
+  margin-left: 10%;
+  width: 40px;
+  height: 40px;
+  background: rgb(247, 247, 247);
+  border-radius: 35px;
+}
